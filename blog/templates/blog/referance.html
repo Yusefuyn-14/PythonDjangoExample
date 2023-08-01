@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block searchbartext %} 
+Ara...
+{% endblock %}
+{% block title %}
+Referanslarımız
+{% endblock%}
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        {% for refer in referance %}
+            <div class="col-sm-3">
+                <div class="card mb-3" style="width:200px; height:200px;">
+                    <img src="{{ refer.image }}" class="card-img-top cover" style="height:105px;width:198px;margin 25px;" alt="...">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center;">{{ refer.name }}</p>
+                        <h5 class="card-text" style="text-align: center;"><small class="text-body-secondary">{{ refer.contact }}</small></h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block css_block %}
+.cover {
+    object-fit: cover;
+    width: 50px;
+    height: 100px;
+  }
+{% endblock css_block %}

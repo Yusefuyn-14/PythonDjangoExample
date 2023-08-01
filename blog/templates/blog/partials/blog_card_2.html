@@ -1,0 +1,19 @@
+{% load static %}
+
+<a href="{% url 'blog_details' blog.slug_field%}">
+  <div class="card mb-3" >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ blog.image.url }}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" href="">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.description|striptags|slice:"0:250"  }}</p>
+            {% comment %} buradaki |safe html etiketlerini yorumla demek {% endcomment %}
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+  </div>
+</a>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block searchbartext %} 
+Ara...
+{% endblock %}
+{% block title %}
+Home page 
+{% endblock%}
+{% block content %}
+<div class="mt-3">
+    {% for blog in blogs %}
+    {% if blog.is_home %}
+        {% with template_name=blog.page_type %}
+            {% include template_name %}
+        {% endwith %}
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock %}
+

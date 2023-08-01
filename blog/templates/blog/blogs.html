@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock%}
+{% block searchbartext %} İçeriklerde ara... {% endblock %}
+{% block content %}
+<div class="mt-3">
+    {% for blog in blogs %}
+        {% if blog.is_active %}
+            {% include blog.page_type %}
+        {% endif %}        
+    {% endfor %}
+</div>
+{% endblock %}
+{% block css_files %}
+
+{% endblock %}
